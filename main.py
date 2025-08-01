@@ -146,7 +146,8 @@ def extract_year(date_str):
         return 'missing'
 
 df['collection_year'] = df['collection_date'].apply(extract_year)
-
+df['month'] = df['collection_date'].apply(lambda x: x[5:7] if len(x) > 5 and x[4] == '-' else None)
+df['month'] = pd.to_numeric(df['month'], errors='coerce')
 df.to_csv(f'./ncbi_{choice}_data.csv', index=True)
 
 if os.path.exists(f'{choice}_data.tsv'):
