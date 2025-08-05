@@ -105,6 +105,10 @@ for abbreviation, state in state_abbreviation_dict.items():
     df.loc[df['geo_loc_name'].str.upper().str.contains(":" + state), 'usa_state'] = state
 df.loc[(df['is_usa_based'] == 1) & (df['usa_state'] == '-'), 'usa_state']  = 'No state'
 df.loc[df['is_usa_based'].isin({0, 98, 99}), 'usa_state'] = 'N/A'
+#remove all rows where is_usa_based is 0 or 99
+df = df[df['is_usa_based'] != 0]
+df = df[df['is_usa_based'] != 99]
+
 
 df.set_index('genome', inplace=True)
 
@@ -148,6 +152,14 @@ def extract_year(date_str):
 df['collection_year'] = df['collection_date'].apply(extract_year)
 df['month'] = df['collection_date'].apply(lambda x: x[5:7] if len(x) > 5 and x[4] == '-' else None)
 df['month'] = pd.to_numeric(df['month'], errors='coerce')
+
+#replace the entries in df['nors_primary_mode_map'] with the cooresponding values in ncbi_to_nors_source_match.csv
+df_map = pd.read_csv('./lookup_tables/ncbi_to_nors_source_match.csv')
+#rename the columns to isolation_source and Primary Mode
+df_map.columns = ['isolation_source', 'Primary Mode']
+df['nors_primary_mode_map'] = df['isolation_source'].copy()
+df['nors_primary_mode_map'] = df['nors_primary_mode_map'].replace(df_map.set_index('isolation_source')['Primary Mode'].to_dict())
+
 df.to_csv(f'./ncbi_{choice}_data.csv', index=True)
 
 if os.path.exists(f'{choice}_data.tsv'):
