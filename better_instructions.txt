@@ -1,0 +1,6 @@
+1. Generate all of the seven graphs again, in a Python pipeline. Make sure the time frames match up with Bani's slides. Do this for E.coli, and for Salmonella
+2. Extract the Host column from NCBI, and make interesting categorizations. Need time series and bar graph breakouts. Do this for E.coli, and for Salmonella
+3. Extract the Strain column from NCBI, and make interesting categorizations. Need time series and bar graph breakouts. Do this for E.coli, and for Salmonella
+4. Extract the geo_loc_name column from NCBI, and make interesting categorizations according to river/farm/community. Need time series and bar graph breakouts. Do this for E.coli, and for Salmonella. (Note, this has already been done getting 'state' from geo_loc_name.)
+5. Extract the geo_loc_name column from NCBI, and make interesting categorizations according to river/farm/community. Need time series and bar graph breakouts. Do this for E.coli, and for Salmonella. (Note, this has already been done getting 'state' from geo_loc_name.)
+6. Get the submitter column into the NCBI data, and extract+categorize based on private, gov, academic, other. Bar charts and time series. Do this for both E.Coli and Salmonella

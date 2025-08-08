@@ -1,0 +1,49 @@
+
+We need data visualization of NCBI data columns that are not present in the NORS data. There three that I see here, for example:
+
+
+Submitter (such as USDA-ARS, Western Regional Research Center)
+Host
+Strain
+geo_loc_name
+
+Note that strain and serotype are not the same
+A strain is a genetic variant or subtype of a microorganism (such as Salmonella).
+
+
+ 
+
+ 
+
+Similarly we have seven items that are in NORS but are not in NCBI
+
+ 
+
+Primary Mode
+Setting
+Illnesses           
+Hospitalizations         
+Deaths                              
+Food Vehicle                  
+IFSAC Category           
+ 
+
+What we are claiming in this paper is that inclusion of NCBI data analysis and visualization provides a more comprehensive understanding of epidemiology of infectious diseases in the US with a particular example of Salmonella and E. coli
+
+ 
+
+I really need side by side comparison of cases that are present in both datasets (i.e NORS and NCBI)
+
+I also need time series graphs and bar chart graphs of three items that are present in NCBI data but are not present in NORS data
+
+ 
+
+ 
+
+I wish to receive this by Monday.
+
+ 
+
+All the best,
+
+Dr. Bani

@@ -22,7 +22,7 @@ subprocess.run(
 print("Download successful")
 print("Formatting the data. Please wait a while.")
 subprocess.run(
-    f"dataformat tsv genome --package ncbi_dataset.zip --fields accession,assminfo-biosample-attribute-name,assminfo-biosample-attribute-value > {choice}_data.tsv",
+    f"dataformat tsv genome --package ncbi_dataset.zip --fields accession,assminfo-biosample-attribute-name,assminfo-biosample-attribute-value,assminfo-submitter > {choice}_data.tsv",
     shell=True,
     check=True
 )
@@ -31,11 +31,11 @@ if os.path.exists('ncbi_dataset.zip'):
     os.remove('ncbi_dataset.zip')
 print("Cleaning the data. Please wait a while.")
 df = pd.read_csv(f'{choice}_data.tsv', sep='\t')
-df.columns = ['genome', 'attribute', 'attribute_value']
-df = df.pivot_table(index='genome', columns='attribute', values='attribute_value', aggfunc='first').reset_index()
+df.columns = ['genome', 'attribute', 'attribute_value', 'submitter']
+df = df.pivot_table(index=['genome','submitter'], columns='attribute', values='attribute_value', aggfunc='first').reset_index()
 df.columns.name = None
 #col_interest = ['genome', 'geo_loc_name', 'attribute_package','collected_by', 'collection_date','strain','host','host_age','host_disease','ifsac_category','isolate','isolation_source', 'lat_lon','project_name', 'purpose_of_sampling', 'source_type']
-col_interest = ['genome', 'geo_loc_name','collection_date','strain','host', 'serotype','isolate','isolation_source','source_type']
+col_interest = ['genome', 'geo_loc_name','collection_date','strain','host', 'serotype','isolate','isolation_source','source_type', 'submitter']
 df = df[col_interest]
 #df.to_csv(f'{choice}_unstacked.csv', index=False)
 

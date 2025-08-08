@@ -1,0 +1,254 @@
+before,after
+missing,Indeterminate/unknown
+feces,Food
+human,Person-to-person
+urine,Water
+stool,Food
+blood,Person-to-person
+Missing,Indeterminate/unknown
+ground turkey,Food
+rectal swab,Food
+Faecal,Food
+clinical sample,Food
+water,Water
+Rectal swab,Food
+chicken,Food
+Not Provided,Indeterminate/unknown
+lung,Environmental contamination other than food/water
+stool sample,Food
+wastewater,Water
+UTI,Water
+Host-associated strain,Indeterminate/unknown
+food,Food
+not collected,Indeterminate/unknown
+sputum,Indeterminate/unknown
+Blood culture,Person-to-person
+intestine,Food
+Ground Beef,Food
+urine sample,Water
+bovine,Animal contact
+anal swab,Food
+Unknown,Indeterminate/unknown
+hospital,Person-to-person
+fecal sample,Food
+not applicable,Indeterminate/unknown
+dairy calf feces,Animal contact
+environment,Environmental contamination other than food/water
+clinical,Person-to-person
+cattle,Animal contact
+animal,Animal contact
+blood culture,Person-to-person
+rectum,Food
+gut,Food
+soil,Environmental contamination other than food/water
+animal-swine-market swine,Food
+turkey,Animal contact
+liver,Person-to-person
+Animal-Turkey-Young Turkey (cecal),Animal contact
+meat,Food
+Rectal Swab,Food
+rectal,Food
+Animal-Swine-Sow (cecal),Animal contact
+chicken breast,Food
+river water,Water
+Animal-Swine-Market Swine (cecal),Animal contact
+Caecal Content,Food
+not provided,Indeterminate/unknown
+cecal content,Food
+not available: to be reported later,Indeterminate/unknown
+raw sewage,Water
+patient with urinary tract infection,Water
+cattle feces,Animal contact
+Animal-Chicken-Young Chicken (cecal),Animal contact
+animal-cattle-steer,Animal contact
+beef,Food
+ground beef,Food
+cloacal swab,Indeterminate/unknown
+venous blood,Indeterminate/unknown
+animal-cattle-dairy cow,Animal contact
+bloodstream isolates,Person-to-person
+wound,Environmental contamination other than food/water
+avian,Animal contact
+pig,Animal contact
+animal-chicken-young chicken,Animal contact
+Animal-Turkey-Young Turkey,Animal contact
+culture,Indeterminate/unknown
+product-raw-intact-beef,Food
+fecal sample from STEC-infected patient,Indeterminate/unknown
+Faecal sample,Food
+Animal-Cattle-Dairy Cow (cecal),Animal contact
+other,Environmental contamination other than food/water
+comminuted beef,Food
+urine from catheter,Water
+human - faeces,Food
+recto-anal junction,Food
+"Feces, Gull (Larus spp.)",Animal contact
+cattle manure,Animal contact
+hospital sewage,Water
+Pork Chop,Food
+farm,Environmental contamination other than food/water
+canine,Animal contact
+Homo sapiens,Person-to-person
+patient,Person-to-person
+human - bacteraemia,Person-to-person
+environmental,Environmental contamination other than food/water
+Environmental strain,Environmental contamination other than food/water
+feces (Bos taurus),Animal contact
+Pig rectal swab,Animal contact
+Guyana,Animal contact
+pus,Person-to-person
+animal-cattle-heifer,Animal contact
+fecal samples,Food
+Cattle feces,Animal contact
+cattle fecal samples,Animal contact
+Cattle faeces,Animal contact
+Dairy milk,Food
+pork,Food
+chickens,Animal contact
+swab,Indeterminate/unknown
+Sewage,Water
+dog,Animal contact
+bile,Person-to-person
+Calf fecal composite,Animal contact
+farm slurry/meat,Food
+Chicken Breasts,Food
+Chicken faeces,Animal contact
+animal-swine-sow,Animal contact
+Commercial Turkey,Food
+manure,Animal contact
+Human urine,Water
+Chicken Thighs,Food
+fresh meat,Food
+retail chicken,Food
+ED Gut,Person-to-person
+mastitis,Indeterminate/unknown
+animal-cattle-beef cow,Animal contact
+"human, animal or environmental",Indeterminate/unknown
+feces elk,Animal contact
+Pork Chops,Food
+blood from patient with bacteremia,Person-to-person
+cloaca swabs from commercial farm,Animal contact
+goat,Animal contact
+clinical material,Person-to-person
+respiratory,Environmental contamination other than food/water
+Food production environment,Environmental contamination other than food/water
+infection,Environmental contamination other than food/water
+Animal-Cattle-Heifer (cecal),Animal contact
+Human faeces,Person-to-person
+Diseased Organ,Person-to-person
+bovine manure,Animal contact
+Feral swine feces,Animal contact
+sheep recto-anal junction,Animal contact
+Stools,Indeterminate/unknown
+spinach,Food
+feral pig,Animal contact
+Not collected,Indeterminate/unknown
+wastewater outflow,Water
+chicken feces,Animal contact
+sediment,Environmental contamination other than food/water
+skin,Person-to-person
+bodily fluid,Person-to-person
+milk,Food
+Pork,Food
+Barn Environment,Environmental contamination other than food/water
+Laboratory,Environmental contamination other than food/water
+Environment,Environmental contamination other than food/water
+Sea water,Water
+ROAR,Indeterminate/unknown
+Faeces/Manure,Animal contact
+fecal swab,Food
+Animal-Cattle-Beef Cow (cecal),Animal contact
+Rectal screen,Food
+Dairy product,Food
+sheep,Animal contact
+Chicken Wings,Food
+fly,Animal contact
+farm environment,Environmental contamination other than food/water
+surface water,Water
+environmental swab,Environmental contamination other than food/water
+pork meat,Food
+feces of feedlot cattle,Animal contact
+Poultry slughterhouses,Environmental contamination other than food/water
+bovine fecal,Animal contact
+Animal-Cattle-Steer (cecal),Animal contact
+military dog fecal sample,Animal contact
+extraintestinal site,Person-to-person
+caecum,Indeterminate/unknown
+unknown,Indeterminate/unknown
+rodent,Animal contact
+others,Environmental contamination other than food/water
+Broiler chicken feces,Animal contact
+food-producing animal,Animal contact
+Cecal Contents,Food
+Gut,Food
+pens,Environmental contamination other than food/water
+Human gut,Food
+cow paddock straw bedding,Environmental contamination other than food/water
+wastewater inflow,Water
+stray dog feces,Animal contact
+"human, urine",Person-to-person
+bovine feces,Animal contact
+Pooled cattle faecal samples collected from floor of farm,Animal contact
+cloacal sample,Indeterminate/unknown
+pork chop,Food
+chicken meat,Food
+pig fecal swab,Animal contact
+Broiler breeder farm,Environmental contamination other than food/water
+flour/flour products,Food
+feces on street,Indeterminate/unknown
+Rectal sample,Food
+oyster,Food
+MSF-NIGER,Indeterminate/unknown
+sewage,Water
+water from electronic waste dumpsite,Water
+female child feces,Food
+urine from indwelling catheter,Water
+Norway,Indeterminate/unknown
+hide,Animal contact
+intestinal tract,Person-to-person
+outflow from WWTP,Indeterminate/unknown
+VDG,Indeterminate/unknown
+treated wastewater,Water
+Poultry,Animal contact
+Cattle Hide,Animal contact
+small intestine,Person-to-person
+fecal sample from patient with Hemolytic Uremic Syndrome,Food
+stool (Odocoileus hemionus),Animal contact
+Pooled sheep faecal samples collected from floor of farm,Animal contact
+Cilantro,Food
+Chicken Legs,Food
+Rectal swab/stool,Food
+LBC,Indeterminate/unknown
+heart,Person-to-person
+Pooled pig faecal samples collected from floor of farm,Animal contact
+Fecal sludge,Food
+packaged whole turkey,Food
+caecal content,Indeterminate/unknown
+Animal-Calf-Bob Veal (cecal),Animal contact
+inflow to WWTP,Indeterminate/unknown
+chicken carcass,Animal contact
+Lettuce,Food
+abdomen,Person-to-person
+infant feces,Food
+cerebrospinal fluid,Person-to-person
+arterial blood,Person-to-person
+ear,Person-to-person
+romaine lettuce,Food
+tomato,Food
+stool (Cervus canadensis),Animal contact
+cucumber,Food
+treated sewage,Water
+PAR,Indeterminate/unknown
+spleen,Person-to-person
+faecal,Food
+Food (meat),Food
+Catch Basin,Indeterminate/unknown
+fecal matter,Food
+male child feces,Food
+pig farm,Environmental contamination other than food/water
+uterus,Person-to-person
+Pig stool,Animal contact
+colonic content of eviscerated cattle,Animal contact
+Not applicable,Indeterminate/unknown
+pond water,Water
+rectal swab from healthy college student,Person-to-person
