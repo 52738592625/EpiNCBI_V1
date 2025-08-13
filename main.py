@@ -125,6 +125,18 @@ df['new_isolation_source'] = df['new_isolation_source'].replace(['stool', 'feces
 df['new_isolation_source'] = df['new_isolation_source'].replace(['intestine','lung','liver','tissue'], 'organ_unknown_host')
 df['new_isolation_source'] = df['new_isolation_source'].replace(['papaya','cucumber','tree nut','peanut butter','brisket swab', 'cilantro', 'Almond kernel','Inshell pistachio from a storage silo', 'food', 'sesame seed', 'egg raw whole'], 'other_food')
 
+df['new_host'] = df['host'].copy()
+df['new_host'] = df['host'].replace(['missing', 'Unknown', 'Not Provided', 'Not Collected','unknown','not collected'], 'Missing')
+df['new_host'] = df['host'].replace(['.*chicken.*', '.*Chicken.*'], 'Chicken', regex=True)
+df['new_host'] = df['host'].replace(['.*pig.*', '.*Pig.*', '.*swine.*', '.*Swine.*', '.*Pork.*', '.*pork.*', '.*bacon.*', '.*Bacon.*', 'Hogs', 'rump swab'], 'Pig', regex=True)
+df['new_host'] = df['host'].replace(['.*cow.*', '.*Cow.*', '.*bovine.*', '.*Bovine.*', '.*cattle.*', '.*Cattle.*', '.*beef.*', '.*Beef.*', '.*taurus.*'], 'Cow', regex=True)
+df['new_host'] = df['host'].replace(['.*turkey.*', '.*Turkey.*'], 'Turkey', regex=True)
+df['new_host'] = df['host'].replace(['.*water.*', '.*Water.*', '.*pond.*', 'sewage'], 'Water', regex=True)
+df['new_host'] = df['host'].replace(['.*human.*', '.*Human.*'], 'Human', regex=True)
+df['new_host'] = df['host'].replace(['environmental', 'environment', 'sediment', 'soil', 'environmental swab', 'environmental swab sponge', 'kratom', 'fluff', 'Feedyard Environment', 'farm environment'], 'Environment')
+df['new_host'] = df['host'].replace(['stool', 'feces', 'urine', 'blood','biological fluid or and tissue', 'poultry manure', 'clinical sample'], 'body_subst_unknown_host')
+df['new_host'] = df['host'].replace(['intestine','lung','liver','tissue'], 'organ_unknown_host')
+df['new_host'] = df['host'].replace(['papaya','cucumber','tree nut','peanut butter','brisket swab', 'cilantro', 'Almond kernel','Inshell pistachio from a storage silo', 'food', 'sesame seed', 'egg raw whole'], 'other_food')
 categories = ['Missing', 'Chicken', 'Pig', 'Cow', 'Turkey', 'Water', 'Human', 'Environment', 'body_subst_unknown_host', 'organ_unknown_host', 'other_food']
 for i in range(len(df)):
     if df['new_isolation_source'][i] not in categories:
