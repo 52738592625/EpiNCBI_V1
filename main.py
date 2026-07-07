@@ -1,11 +1,13 @@
-#Install packages necessary to run the code
-import subprocess
-subprocess.run(
-    f"python -m pip install pandas",
-    shell=True,
-    check=True
-)
+import sys
 import os
+
+def get_asset_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
+import subprocess
 import pandas as pd
 import numpy as np
 import warnings
@@ -20,8 +22,18 @@ choice = input("")
 ####################################
 #Download step. Filters out sequencing data. Cutoff date is Jan 1, 2024
 print("Downloading. Please wait a while.")
+# Change the Download Step call to:
+datasets_bin = get_asset_path("datasets.exe")
 subprocess.run(
-    f"datasets download genome taxon {choice} --include none --released-before 2024-01-01",
+    f'"{datasets_bin}" download genome taxon {choice} --include none --released-before 2024-01-01',
+    shell=True,
+    check=True
+)
+
+# Change the Data Formatting Step call to:
+dataformat_bin = get_asset_path("dataformat.exe")
+subprocess.run(
+    f'"{dataformat_bin}" tsv genome --package ncbi_dataset.zip --fields accession,assminfo-biosample-attribute-name,assminfo-biosample-attribute-value,assminfo-submitter > {choice}_data.tsv',
     shell=True,
     check=True
 )
@@ -31,8 +43,9 @@ print("Download successful")
 
 
 print("Formatting the data. Please wait a while.")
+dataformat_bin = get_asset_path("dataformat.exe")
 subprocess.run(
-    f"dataformat tsv genome --package ncbi_dataset.zip --fields accession,assminfo-biosample-attribute-name,assminfo-biosample-attribute-value,assminfo-submitter > {choice}_data.tsv",
+    f'"{dataformat_bin}" tsv genome --package ncbi_dataset.zip --fields accession,assminfo-biosample-attribute-name,assminfo-biosample-attribute-value,assminfo-submitter > {choice}_data.tsv',
     shell=True,
     check=True
 )
@@ -55,7 +68,8 @@ df = df[col_interest]
 #Data Cleaning Step
 
 #Create a dictionary from the lookup table from the top US cities and their states
-df_city_state_lookup = pd.read_csv('./lookup_tables/top_us_cities.csv', dtype=str)
+lookup_path = get_asset_path(os.path.join('lookup_tables', 'top_us_cities.csv'))
+df_city_state_lookup = pd.read_csv(lookup_path, dtype=str)
 df_city_state_lookup.head(5)
 #create a dictionary with the states as keys and a list of the cities in that state as values
 city_state_dict = {}
@@ -78,7 +92,8 @@ df['is_usa_based'] = np.nan
 df['usa_state'] = '-'
 
 #read in the lookup table for US states
-df_state_lookup = pd.read_csv('./lookup_tables/us_states.csv', dtype=str)
+lookup_path = get_asset_path(os.path.join('lookup_tables', 'us_states.csv'))
+df_state_lookup = pd.read_csv(lookup_path, dtype=str)
 df_state_lookup.head(5)
 state_abbreviation_dict = {}
 for index, row in df_state_lookup.iterrows():
@@ -86,7 +101,8 @@ for index, row in df_state_lookup.iterrows():
     abbreviation = row['Abbreviation'].upper()
     state_abbreviation_dict[abbreviation.upper()] = state
 
-countries_df = pd.read_csv('./lookup_tables/countries_of_the_world.csv', dtype=str)
+lookup_path = get_asset_path(os.path.join('lookup_tables', 'countries_of_the_world.csv'))
+countries_df = pd.read_csv(lookup_path, dtype=str)
 countries_list = countries_df['Country'].str.upper().tolist()
 
 #set is_usa_based to 1 if geo_loc_name contains 'USA' or 'UNITED STATES'
@@ -142,18 +158,19 @@ def extract_year(date_str):
         return 'missing'
 
 df['collection_year'] = df['collection_date'].apply(extract_year)
-df['month'] = df['collection_date'].apply(lambda x: x[5:7] if len(x) > 5 and x[4] == '-' else None)
-df['month'] = pd.to_numeric(df['month'], errors='coerce')
+df['collection_month'] = df['collection_date'].apply(lambda x: x[5:7] if len(x) > 5 and x[4] == '-' else None)
+df['collection_month'] = pd.to_numeric(df['collection_month'], errors='coerce')
 
 
 ##############################################
 #Saving the data output
 
-df.to_csv(f'./ncbi_{choice}_data.csv', index=True)
+output_path = os.path.join(os.path.abspath("."), f"ncbi_{choice}_data.csv")
+df.to_csv(output_path, index=True)
+print(f"File successfully saved to: {output_path}")
 
-if os.path.exists(f'{choice}_data.tsv'):
-    os.remove(f'{choice}_data.tsv')
-if os.path.exists(f'{choice}_unstacked.csv'):
-    os.remove(f'{choice}_unstacked.csv')
+tsv_path = os.path.join(os.path.abspath("."), f'{choice}_data.tsv')
+if os.path.exists(tsv_path):
+    os.remove(tsv_path)
 print("Done")
 
